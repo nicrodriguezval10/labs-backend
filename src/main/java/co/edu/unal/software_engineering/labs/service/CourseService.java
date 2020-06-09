@@ -28,6 +28,15 @@ public class CourseService{
                 course.getDurationHours( ) != null;
     }
 
+    public boolean isRightCoursePOJO( CoursePOJO coursePojo ){
+        Course course = new Course( );
+        course.setCourseName( coursePojo.getCourseName( ) );
+        course.setDurationHours( coursePojo.getDurationHours( ) );
+
+        return  !course.getCourseName( ).isEmpty( ) &&
+                course.getDurationHours( ) != null;
+    }
+
     public Course mapperCourseEntity( CoursePOJO coursePojo ){
         Course course = new Course( );
         course.setCourseName( coursePojo.getCourseName( ) );
